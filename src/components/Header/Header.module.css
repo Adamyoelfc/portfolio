@@ -1,0 +1,38 @@
+.hi1 {
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  width: 19ch;
+  overflow: hidden;
+}
+
+.animh1 {
+  border-right: 4px solid;
+  animation: typing 2s steps(19), blink 0.3s infinite step-end alternate;
+}
+
+.animh2 {
+  animation: typing 2s steps(24), blink 0.3s infinite step-end alternate;
+}
+
+.hi2 {
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 24ch;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
