@@ -2,6 +2,7 @@ import Card from "./Card";
 import awareimage from "../../assets/aware.png";
 import foodorder from "../../assets/foodOrder.png";
 import xelvatic from "../../assets/xelvatic.webp";
+import arrow from '../../assets/icons/right-arrow.png'
 
 // projects:
 // xelvatic
@@ -55,7 +56,7 @@ const Projects = () => {
         <p className="ml-3 text-4xl">💻</p>
       </div>
 
-      <div className="flex w-screen h-screen p-10 mx-auto overflow-scroll snap-x snap-mandatory">
+      <div className="flex w-screen pt-10 mx-auto overflow-scroll snap-x snap-mandatory">
         {projects.map((project) => (
           <Card
             key={project.title}
@@ -65,6 +66,9 @@ const Projects = () => {
             skills={project.skills}
           />
         ))}
+      </div>
+      <div>
+            <img className="w-20 pr-5 ml-auto animate-bounceRight" src={arrow} alt="arrow"/>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import Projects from "./components/Projects/Projects";
 
 function App() {
   return (
-    <div className="w-screen h-screen overflow-scroll md:snap-y lg:snap-y snap-mandatory">
+    <div className="w-screen h-screen overflow-scroll snap-y md:snap-y lg:snap-y snap-mandatory">
       <div className="h-screen pt-10 mb-10 snap-start">
         <Header />
       </div>

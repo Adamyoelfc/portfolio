@@ -44,6 +44,7 @@ const Contact = () => {
                   <h2
                     className="
                   mb-6
+                  ml-7
                   text-transparent
                   uppercase
                   bg-clip-text
