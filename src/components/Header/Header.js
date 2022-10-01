@@ -38,7 +38,7 @@ export const Header = () => {
         <p
           className={`${
             classes.hi1
-          } + text-gray-400 + mx-auto + text-xl + sm:text-3xl + md:text-5xl +  lg:text-7xl + ${
+          } + text-gray-400 + mx-auto + text-3xl +  md:text-5xl +  lg:text-7xl + ${
             animation ? classes.animh1 : ""
           } `}
         >
@@ -46,7 +46,7 @@ export const Header = () => {
         </p>
         {!animation && (
           <p
-            className={`${classes.hi2} + text-gray-400 + mx-auto + text-xl + sm:text-3xl + 
+            className={`${classes.hi2} + text-gray-400 + mx-auto + text-3xl + 
       md:text-5xl +  lg:text-7xl + ${classes.animh2}`}
           >
             and i'm a web developer!
