@@ -1,7 +1,6 @@
 const AboutMe = () => {
   return (
-    <div id="aboutme" className="h-screen mt-40 snap-start">
-      <div className="h-screen pt-10 m-10 grid justify-items-center">
+      <div className="grid justify-items-center">
         <p
           className="text-4xl font-extrabold text-center text-transparent monospace bg-clip-text bg-gradient-to-br from-yellow-400 to-gray-800"
         >
@@ -30,7 +29,6 @@ const AboutMe = () => {
           </ul>
         </div>
       </div>
-    </div>
   );
 };
 

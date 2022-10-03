@@ -3,6 +3,7 @@ import awareimage from "../../assets/aware.png";
 import foodorder from "../../assets/foodOrder.png";
 import xelvatic from "../../assets/xelvatic.webp";
 import arrow from '../../assets/icons/right-arrow.png'
+import { Fragment } from "react";
 
 // projects:
 // xelvatic
@@ -27,7 +28,7 @@ const projects = [
     image: awareimage,
     title: "Aware Medical",
     description:
-      "App for managing the patient’s records, two roles (doctor and patient), where the doctor can manage the patient record, schedule appointments, get notification of cancelation from the patients, and more. The patient can fill out his record and upload it. This app makes the process between patient-doctor too easy and practical.",
+      "App for managing the patient’s records, two roles (doctor and patient), where the doctor can manage the patient record, schedule appointments, get notification of cancelation from the patients, and more. The patient can fill out his record and upload it. This app makes the process between patient-doctor too easier and practical.",
     skills: [
       "Vuejs",
       "DjangoRestFramework",
@@ -48,15 +49,19 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div id="projects" className="h-screen mt-40 snap-start">
-      <div className="flex justify-center pt-10 mt-10">
-        <p className="text-4xl font-extrabold text-center text-transparent monospace bg-clip-text bg-gradient-to-br from-green-400 to-yellow-800">
+    <Fragment>
+      <div className="flex justify-center">
+        <p className="mb-5 text-4xl font-extrabold text-center text-transparent monospace bg-clip-text bg-gradient-to-br from-green-400 to-yellow-800">
           Projects
         </p>
         <p className="ml-3 text-4xl">💻</p>
       </div>
 
-      <div className="flex w-screen pt-10 mx-auto overflow-scroll snap-x snap-mandatory">
+      <div className="flex justify-end mt-5 sm:flex md:flex lg:hidden">
+        <p className="mr-4 text-sm text-gray-400">swipe right</p>
+            <img className="w-10 pr-5 ml-2 animate-bounceRight" src={arrow} alt="arrow"/>
+      </div>
+      <div className="flex mx-auto overflow-scroll snap-x snap-mandatory">
         {projects.map((project) => (
           <Card
             key={project.title}
@@ -67,10 +72,7 @@ const Projects = () => {
           />
         ))}
       </div>
-      <div>
-            <img className="w-20 pr-5 ml-auto animate-bounceRight" src={arrow} alt="arrow"/>
-      </div>
-    </div>
+    </Fragment>
   );
 };
 

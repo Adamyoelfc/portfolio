@@ -1,7 +1,13 @@
-import cv from '../../assets/Adam_en_CV.pdf'
-export default function Footer() {
+import cv from "../../assets/Adam_en_CV.pdf";
+export default function Footer(props) {
+  const scrollToProj = () => {
+    props.projectRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToAbout = () => {
+    props.aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <div className="h-screen mt-40 grid snap-start">
+    <div className="grid">
       <div className="p-10 m-10 my-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
         <div className="mt-20 text-xl">
           <ul>
@@ -29,9 +35,33 @@ export default function Footer() {
         </div>
         <div className="mt-20">
           <ul>
-            <li><a className="text-xl text-gray-500 hover:text-cyan-500" href="#projects">PROJECTS</a></li>
-            <li><a className="text-xl text-gray-500 hover:text-cyan-500" href="#aboutme">ABOUT ME</a></li>
-            <li><a className="text-xl text-gray-500 hover:text-cyan-500" href={cv}>MY CV</a></li>
+            <li>
+              <p
+                className="text-xl text-gray-500 hover:text-cyan-500"
+                onClick={scrollToProj}
+              >
+                PROJECTS
+              </p>
+            </li>
+            <li></li>
+            <li>
+              <p
+                className="text-xl text-gray-500 hover:text-cyan-500"
+                onClick={scrollToAbout}
+              >
+                ABOUT ME
+              </p>
+            </li>
+            <li>
+              <a
+                className="text-xl text-gray-500 hover:text-cyan-500"
+                target="_blank"
+                href={cv}
+                rel="noreferrer"
+              >
+                MY CV
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -45,8 +75,22 @@ export default function Footer() {
             © Adam Fernandez 2022
           </p>
           <div className="hidden mr-20 sm:flex">
-            <a className="m-2 hover:text-yellow-200" href="https://github.com/Adamyoelfc" target="_blank" rel="noreferrer">GHITHUB</a>
-            <a className="m-2 hover:text-yellow-200" href="https://www.linkedin.com/in/adam-fernandez-330a011a8" target="_blank" rel="noreferrer">LINKEDIN</a>
+            <a
+              className="m-2 hover:text-yellow-200"
+              href="https://github.com/Adamyoelfc"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GHITHUB
+            </a>
+            <a
+              className="m-2 hover:text-yellow-200"
+              href="https://www.linkedin.com/in/adam-fernandez-330a011a8"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LINKEDIN
+            </a>
           </div>
         </div>
       </div>

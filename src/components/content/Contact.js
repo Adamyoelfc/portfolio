@@ -34,12 +34,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="justify-center h-screen mt-40 grid snap-start">
-      <div className="my-auto ">
-        <section className="py-20 lg:py-[120px] overflow-hidden relative z-10">
+        <section className="lg:py-[120px] overflow-hidden relative z-10">
           <div className="container">
             <div className="flex flex-wrap -mx-4 lg:justify-between">
-              <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+              <div className="px-4 mx-auto w-30 ">
                 <div className="max-w-[570px] mb-12 lg:mb-0">
                   <h2
                     className="
@@ -62,7 +60,7 @@ const Contact = () => {
                   </h2>
                 </div>
               </div>
-              <div className="w-full px-4">
+              <div className="w-full max-w-lg px-4 mx-auto">
                 <div className="relative p-8 rounded-lg sm:p-12">
                   <form onSubmit={submitFormHandler}>
                     <div className="mb-6">
@@ -143,8 +141,6 @@ const Contact = () => {
             </div>
           </div>
         </section>
-      </div>
-    </div>
   );
 };
 
