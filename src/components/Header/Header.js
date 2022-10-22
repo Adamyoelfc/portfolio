@@ -9,7 +9,7 @@ import bootstrap from "../../assets/icons/icons8-bootstrap.svg";
 import react from "../../assets/icons/icons8-react-80.png";
 import vue from "../../assets/icons/icons8-vue.js-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-96.png";
 import github from "../../assets/icons/github.png";
-import emoji from "../../assets/icons/8029063bfe493d253f8f098d38d458b0-sticker.png";
+import emoji from "../../assets/icons/emoji.png";
 import Skills from "./Skills";
 
 export const Header = () => {
