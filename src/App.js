@@ -6,15 +6,15 @@ import AboutMe from "./components/content/AboutMe";
 import Contact from "./components/content/Contact";
 import Projects from "./components/Projects/Projects";
 import { useRef, useEffect } from "react";
-import ReactGA from 'react-ga';
+import myGa from "./myGa";
 
 function App() {
   const projectRef = useRef();
   const aboutMeRef = useRef();
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  });
+    myGa();
+  }, []);
 
   return (
     <div className="h-screen overflow-scroll scroll-auto">
