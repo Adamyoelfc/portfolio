@@ -5,11 +5,17 @@ import Footer from "./components/layouts/Footer";
 import AboutMe from "./components/content/AboutMe";
 import Contact from "./components/content/Contact";
 import Projects from "./components/Projects/Projects";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import ReactGA from 'react-ga';
 
 function App() {
   const projectRef = useRef();
   const aboutMeRef = useRef();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
+
   return (
     <div className="h-screen overflow-scroll scroll-auto">
       <div className="pt-10 mb-10">
