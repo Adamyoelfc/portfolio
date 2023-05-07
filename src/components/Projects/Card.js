@@ -6,8 +6,8 @@ const Card = (props) => {
       <div className="m-3 overflow-hidden rounded snap-center w-80 sm:w-96 ">
         <img className="h-28" src={props.image} alt="Sunset in the mountains" />
         <div className="px-6 py-4">
-          <div className="mb-2 text-xl font-bold">{props.title}</div>
-          <p className="text-base text-gray-500">{props.description}</p>
+          <div className="mb-2 text-xl font-bold text-gray-300">{props.title}</div>
+          <p className="text-base text-gray-300">{props.description}</p>
         </div>
         <div className="px-6 pt-4 pb-2">
           {props.skills.map((skill) => (

@@ -2,7 +2,7 @@ import Card from "./Card";
 import awareimage from "../../assets/aware.png";
 import foodorder from "../../assets/foodOrder.png";
 import xelvatic from "../../assets/xelvatic.webp";
-import arrow from '../../assets/icons/right-arrow.png'
+import arrow from "../../assets/icons/right-arrow.png";
 import { Fragment } from "react";
 
 // projects:
@@ -50,27 +50,33 @@ const projects = [
 const Projects = () => {
   return (
     <Fragment>
-      <div className="flex justify-center">
-        <p className="mb-5 text-4xl font-extrabold text-center text-transparent monospace bg-clip-text bg-gradient-to-br from-green-400 to-yellow-800">
-          Projects
-        </p>
-        <p className="ml-3 text-4xl">💻</p>
-      </div>
+      <div className="sm:mx-5">
+        <div className="flex justify-center">
+          <p className="mb-5 text-4xl uppercase text-center text-white">
+            Projects
+          </p>
+          <p className="ml-3 text-4xl">💻</p>
+        </div>
 
-      <div className="flex justify-end mt-5 sm:flex md:flex lg:hidden">
-        <p className="mr-4 text-sm text-gray-400">swipe right</p>
-            <img className="w-10 pr-5 ml-2 animate-bounceRight" src={arrow} alt="arrow"/>
-      </div>
-      <div className="flex mx-auto overflow-scroll snap-x snap-mandatory">
-        {projects.map((project) => (
-          <Card
-            key={project.title}
-            image={project.image}
-            title={project.title}
-            description={project.description}
-            skills={project.skills}
+        <div className="flex justify-end mt-5 sm:flex md:flex lg:hidden">
+          <p className="mr-4 text-sm text-gray-400">swipe right</p>
+          <img
+            className="w-10 pr-5 ml-2 animate-bounceRight"
+            src={arrow}
+            alt="arrow"
           />
-        ))}
+        </div>
+        <div className="flex overflow-scroll snap-x snap-mandatory">
+          {projects.map((project) => (
+            <Card
+              key={project.title}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              skills={project.skills}
+            />
+          ))}
+        </div>
       </div>
     </Fragment>
   );

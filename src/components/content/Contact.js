@@ -1,6 +1,7 @@
 import { send } from "emailjs-com";
 import { useState } from "react";
 import swal from "sweetalert";
+import emoji from "../../assets/icons/call-me-icon.png";
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -34,113 +35,104 @@ const Contact = () => {
   };
 
   return (
-        <section className="lg:py-[120px] overflow-hidden relative z-10">
-          <div className="container">
-            <div className="flex flex-wrap -mx-4 lg:justify-between">
-              <div className="px-4 mx-auto w-30 ">
-                <div className="max-w-[570px] mb-12 lg:mb-0">
-                  <h2
-                    className="
-                  mb-6
-                  ml-7
-                  text-transparent
-                  uppercase
-                  bg-clip-text
-                  bg-gradient-to-br
-                  from-gray-200
-                  to-blue-700
-                  font-bold
-                  text-[32px]
-                  sm:text-[40px]
-                  lg:text-[36px]
-                  xl:text-[40px]
-                  "
-                  >
-                    Contact Me
-                  </h2>
-                </div>
+    <section className="overflow-hidden relative z-10">
+      <div className="container">
+        <div className="flex flex-wrap -mx-4 lg:justify-between">
+          <div className="px-4 mx-auto w-30">
+            <div className="max-w-[570px] mb-12 lg:mb-0">
+              <p className="mb-5 text-4xl uppercase text-center text-gray-600">
+                Contact me
+              </p>
+              <div className="hidden mx-auto mt-20 md:block">
+                <img
+                  className="w-60 h-60 animate-fadeInR"
+                  src={emoji}
+                  alt="img"
+                />
               </div>
-              <div className="w-full max-w-lg px-4 mx-auto">
-                <div className="relative p-8 rounded-lg sm:p-12">
-                  <form onSubmit={submitFormHandler}>
-                    <div className="mb-6">
-                      <input
-                        name="from_name"
-                        value={toSend.from_name}
-                        onChange={handleChange}
-                        type="text"
-                        placeholder="Your Name"
-                        className="
+            </div>
+          </div>
+          <div className="w-full max-w-lg px-4 mx-auto">
+            <div className="relative p-8 rounded-lg sm:p-12">
+              <form onSubmit={submitFormHandler}>
+                <div className="mb-6">
+                  <input
+                    name="from_name"
+                    value={toSend.from_name}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Your Name"
+                    className="
                         w-full
                       bg-transparent
                         rounded
                         py-3
                         px-[14px]
                         text-body-color text-base
-                        border border-[f0f0f0]
+                        border border-black
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                      />
-                    </div>
-                    <div className="mb-6">
-                      <input
-                        name="reply_to"
-                        value={toSend.reply_to}
-                        onChange={handleChange}
-                        type="email"
-                        placeholder="Your Email"
-                        className="
+                  />
+                </div>
+                <div className="mb-6">
+                  <input
+                    name="reply_to"
+                    value={toSend.reply_to}
+                    onChange={handleChange}
+                    type="email"
+                    placeholder="Your Email"
+                    className="
                         w-full
                         rounded
                         py-3
                       bg-transparent
                         px-[14px]
                         text-body-color text-base
-                        border border-[f0f0f0]
+                        border border-black
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                      />
-                    </div>
-                    <div className="mb-6">
-                      <textarea
-                        rows="6"
-                        name="message"
-                        value={toSend.message}
-                        onChange={handleChange}
-                        placeholder="Your Message"
-                        className="
+                  />
+                </div>
+                <div className="mb-6">
+                  <textarea
+                    rows="6"
+                    name="message"
+                    value={toSend.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    className="
                         w-full
                         rounded
                       bg-transparent
                         py-3
                         px-[14px]
                         text-body-color text-base
-                        border border-[f0f0f0]
+                        border border-black
                         resize-none
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
                         "
-                      ></textarea>
-                    </div>
-                    <div>
-                      <button
-                        type="submit"
-                        className="w-full p-3 text-white border rounded bg-primary border-primary transition hover:bg-opacity-90"
-                      >
-                        Send Message
-                      </button>
-                    </div>
-                  </form>
+                  ></textarea>
                 </div>
-              </div>
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full p-3 text-white border rounded bg-black border-primary transition hover:bg-opacity-50"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -17,20 +17,20 @@ function App() {
   }, []);
 
   return (
-    <div className="h-screen overflow-scroll scroll-auto">
+    <div className="h-screen overflow-scroll scroll-auto w-screen">
       <div className="pt-10 mb-10">
         <Header />
       </div>
 
-      <div ref={projectRef} className="mx-4 mt-20 md:mt-40 sm:mx-20">
+      <div ref={projectRef} className="bg-black pt-20">
         <Projects />
       </div>
 
-      <div ref={aboutMeRef} className="mx-4 mt-40 sm:mx-20">
+      <div ref={aboutMeRef} className="bg-gray-100 pt-20">
         <AboutMe />
       </div>
 
-      <div className="mx-4 mt-40 sm:mx-20">
+      <div className="bg-gray-200 pt-20">
         <Contact />
       </div>
 

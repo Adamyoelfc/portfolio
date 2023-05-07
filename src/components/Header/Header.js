@@ -38,7 +38,7 @@ export const Header = () => {
         <p
           className={`${
             classes.hi1
-          } + text-gray-400 + mx-auto + text-2xl +  md:text-5xl +  lg:text-7xl + ${
+          } + text-gray-500 + mx-auto + text-2xl +  md:text-5xl +  lg:text-7xl + ${
             animation ? classes.animh1 : ""
           } `}
         >
@@ -46,7 +46,8 @@ export const Header = () => {
         </p>
         {!animation && (
           <p
-            className={`${classes.hi2} + text-gray-400 + mx-auto + text-2xl + 
+            className={`${classes.hi2} + text-gray-500 + mx-auto + text-xl + 
+            :wa
       md:text-5xl +  lg:text-7xl + ${classes.animh2}`}
           >
             and I'm a web developer!
@@ -57,9 +58,9 @@ export const Header = () => {
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div className="mx-auto my-auto animate-fadeInL">
           <p
-            className="m-10 text-4xl font-extrabold text-center text-transparent monospace bg-clip-text bg-gradient-to-br from-gray-400 to-gray-800"
+            className="m-10 uppercase text-4xl text-center"
           >
-            Skills 💪🏻
+            Skills 💪
           </p>
           <div className="justify-center grid grid-cols-4">
             {skills.map((skill) => (
