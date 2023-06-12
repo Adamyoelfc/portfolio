@@ -22,7 +22,7 @@ function App() {
         <Header />
       </div>
 
-      <div ref={projectRef} className="bg-black pt-20">
+      <div ref={projectRef} className="bg-gray-900 pt-20">
         <Projects />
       </div>
 

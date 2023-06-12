@@ -3,6 +3,7 @@ import awareimage from "../../assets/aware.png";
 import foodorder from "../../assets/foodOrder.png";
 import xelvatic from "../../assets/xelvatic.webp";
 import arrow from "../../assets/icons/right-arrow.png";
+import memorygame from "../../assets/MemoryGame.png";
 import { Fragment } from "react";
 
 // projects:
@@ -11,6 +12,14 @@ import { Fragment } from "react";
 // aware
 
 const projects = [
+  {
+    image: memorygame,
+    title: "Memory Game",
+    description:
+      "A simple Memory Game, build with React.js, using features like useState, useContext and more...",
+    skills: ["React", "Tailwind"],
+    link: 'https://memorygame.adamdev.me/'
+  },
   {
     image: xelvatic,
     title: "Xelvatic",
@@ -74,6 +83,7 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               skills={project.skills}
+              link={project.link}
             />
           ))}
         </div>
