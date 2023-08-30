@@ -12,7 +12,7 @@ const Card = (props) => {
           <p className="text-base text-gray-300">{props.description}</p>
           {props.link ? (
               <button class="rounded bg-blue-800 p-2 text-white text-xs">
-                <a href={props.link}>Check it out...</a>
+                <a target="_blank" href={props.link}>Check it out...</a>
               </button>
           ) : (
             ""

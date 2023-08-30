@@ -4,6 +4,7 @@ import foodorder from "../../assets/foodOrder.png";
 import xelvatic from "../../assets/xelvatic.webp";
 import arrow from "../../assets/icons/right-arrow.png";
 import memorygame from "../../assets/MemoryGame.png";
+import shirtCustomizer from "../../assets/shirtCustomizer.png";
 import { Fragment } from "react";
 
 // projects:
@@ -12,6 +13,14 @@ import { Fragment } from "react";
 // aware
 
 const projects = [
+  {
+    image: shirtCustomizer,
+    title: "Shirt Customizer",
+    description:
+      "A customizable 3D t-shirt model where users can change the color in real time, upload images to place on the t-shirt, such as logos or fully filled designs, and generate logos and images for the t-shirt using AI.",
+    skills: ["React", "Tailwind", "Node/Express", "API", "FullStack"],
+    link: 'https://shirtcustomizer.adamdev.me/'
+  },
   {
     image: memorygame,
     title: "Memory Game",
