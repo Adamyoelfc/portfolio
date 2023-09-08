@@ -37,24 +37,24 @@ export default function Footer(props) {
           <ul>
             <li>
               <p
-                className="text-xl cursor-pointer text-gray-500 hover:text-cyan-500"
+                className="text-xl text-gray-500 cursor-pointer hover:text-cyan-500"
                 onClick={scrollToProj}
               >
                 PROJECTS
               </p>
             </li>
             <li></li>
-            <li>
+            {/* <li>
               <p
-                className="text-xl cursor-pointer text-gray-500 hover:text-cyan-500"
+                className="text-xl text-gray-500 cursor-pointer hover:text-cyan-500"
                 onClick={scrollToAbout}
               >
                 ABOUT ME
               </p>
-            </li>
+            </li> */}
             <li>
               <a
-                className="text-xl cursor-pointer text-gray-500 hover:text-cyan-500"
+                className="text-xl text-gray-500 cursor-pointer hover:text-cyan-500"
                 target="_blank"
                 href={cv}
                 rel="noreferrer"

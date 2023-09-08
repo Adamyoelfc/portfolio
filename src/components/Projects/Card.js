@@ -1,35 +1,67 @@
-// import image from "../../assets/ScreenShot.png";
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+
+import Atropos from 'atropos/react';
+import 'atropos/atropos.css';
 
 const Card = (props) => {
+  const cardRef = useRef(null);
+  const cardInView = useInView(cardRef, { once: true });
+
   return (
-    <div className="snap-center">
-      <div className="m-3 overflow-hidden rounded snap-center w-80 sm:w-96 ">
-        <img className="h-28" src={props.image} alt="Sunset in the mountains" />
-        <div className="px-6 py-4">
-          <div className="mb-2 text-xl font-bold text-gray-300">
-            {props.title}
+    <motion.div
+      ref={cardRef}
+      style={{
+        transform: cardInView
+          ? 'none'
+          : props.direction
+          ? 'translateX(+200px)'
+          : 'translateX(-200px)',
+        opacity: cardInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+      }}
+      className="flex h-fit justify-center rounded-[20px]"
+    >
+      <Atropos
+        stretchZ={8}
+        activeOffset={60}
+        shadow={false}
+        highlight={true}
+        className="rounded-[100px]"
+      >
+        <div className=" w-[388px] h-[500px] pt-5 bg-purple-300 bg-opacity-10 rounded-[18px] shadow-xl">
+          <div
+            data-atropos-offset="5"
+            style={{
+              backgroundImage: `url(${props.image})`,
+              backgroundSize: 'cover',
+            }}
+            className={`w-[350px] h-[200px] mx-auto mb-5 rounded-[19px] shadow-xl`}
+          />
+          <div
+            data-atropos-offset="-2"
+            className="flex justify-center p-1 flex-wrap gap-1"
+          >
+            {props.skills.map((skill) => (
+              <div className="bg-purple-400 text-sm mx-auto w-fit p-1 text-white rounded-md bg-opacity-[.50]">
+                {skill}
+              </div>
+            ))}
           </div>
-          <p className="text-base text-gray-300">{props.description}</p>
-          {props.link ? (
-              <button class="rounded bg-blue-800 p-2 text-white text-xs">
-                <a target="_blank" href={props.link}>Check it out...</a>
+          <div
+            data-atropos-offset="5"
+            className="w-[340px] p-5 text-gray-200 font-normal text-sm"
+          >
+            {props.description}
+            {props.link && (
+              <button className=" bg-purple-500 opacity-[.68] shadow-xl hover:opacity-[100] px-2 ml-5 text-white rounded-md">
+                <a href={props.link} target='_blank'>Link</a>
               </button>
-          ) : (
-            ""
-          )}
+            )}
+          </div>
         </div>
-        <div className="px-6 pt-4 pb-2">
-          {props.skills.map((skill) => (
-            <span
-              key={skill}
-              className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full"
-            >
-              #{skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
+      </Atropos>
+    </motion.div>
   );
 };
 
