@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
+.headerText {
+  font-family: 'Fjalla One', sans-serif;
+}
+
 .hi1 {
   display: block;
   font-family: monospace;
@@ -20,7 +27,7 @@
   font-family: monospace;
   white-space: nowrap;
   border-right: 4px solid;
-  width: 24ch;
+  width: 20ch;
   overflow: hidden;
 }
 

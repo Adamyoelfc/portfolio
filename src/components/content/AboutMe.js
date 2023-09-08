@@ -1,30 +1,61 @@
-const AboutMe = () => {
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+
+import { hiThereStyle } from '../../utils/Style';
+
+const AboutMe = ({ inside = false }) => {
+  const aboutRef = useRef(null);
+  const aboutInView = useInView(aboutRef, { once: true });
   return (
-    <div className="grid justify-items-center">
-      <p className="mb-5 text-4xl uppercase text-center text-black">About me</p>
-      <div className="p-3 sm:p-10 md:p-10 lg:p-10">
-        <h4 className="text-xl  md:text-4xl lg:text-5xl max-w-screen-lg text-transparent bg-clip-text bg-gradient-to-br from-gray-600 to-gray-400  monospace">
-          About 3 years working with technologies like Python - Django,
-          JavaScript, git-GitHub... and other javascript framework like Vue.js,
-          React.js etc...
-        </h4>
-        <ul className="pt-10 mt-10 text-xl monospace">
+    <motion.div
+      className="grid justify-items-center"
+      style={{
+        transform: aboutInView ? 'none' : 'translateX(+200px)',
+        opacity: aboutInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+      }}
+      ref={aboutRef}
+    >
+      <p
+        className={
+          `${hiThereStyle} + ' z-2 flex justify-center my-auto ' + ${inside ? 'm-5' : 'mb-20 mr-[55px]' }`
+        }
+      >
+        ABOUT ME
+      </p>
+      <div className={`${inside ? 'p-1' : 'p-10' }`}>
+        <div>
+          <h4
+           className={` ${inside ? 'text-md w-80' : 'text-3xl'}  max-w-screen-lg text-gray-300 shadow-md`}
+          >
+            <p>
+              I am a passionate and creative developer with a strong foundation
+              in computer science. My journey in programming has been shaped by
+              a commitment to continuous learning and a desire to create
+              innovative solutions. I thrive in collaborative environments and
+              believe in the power of teamwork to drive technological
+              advancements.
+            </p>
+          </h4>
+        </div>
+
+        {/* <ul className="pt-10 mt-10 text-xl monospace">
           <li className="flex">
-            👨‍💻{" "}
+            👨‍💻{' '}
             <p className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-gray-400 to-gray-800">
               Love for tech and innovation.
             </p>
           </li>
 
           <li className="flex">
-            💓{" "}
+            💓{' '}
             <p className="ml-2 text-transparent bg-clip-text bg-gradient-to-br from-gray-400 to-gray-800">
               Passionate with problem solving and automation.
             </p>
           </li>
-        </ul>
+        </ul> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

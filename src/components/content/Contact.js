@@ -1,32 +1,34 @@
-import { send } from "emailjs-com";
-import { useState } from "react";
-import swal from "sweetalert";
-import emoji from "../../assets/icons/call-me-icon.png";
+import { send } from 'emailjs-com';
+import { useState } from 'react';
+import swal from 'sweetalert';
+import emoji from '../../assets/icons/call-me-icon.png';
+
+import { hiThereStyle } from '../../utils/Style';
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
-    from_name: "",
-    message: "",
-    reply_to: "",
+    from_name: '',
+    message: '',
+    reply_to: '',
   });
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    send("service_tfmuyp8", "template_npqqikg", toSend, "9zlDeEXVKu6TiMTca")
+    send('service_tfmuyp8', 'template_npqqikg', toSend, '9zlDeEXVKu6TiMTca')
       .then((response) => {
         swal(
-          "Message sent successfully",
-          "I will reply as soon as possible",
-          "success"
+          'Message sent successfully',
+          'I will reply as soon as possible',
+          'success'
         );
         setToSend({
-          from_name: "",
-          message: "",
-          reply_to: "",
+          from_name: '',
+          message: '',
+          reply_to: '',
         });
       })
       .catch((err) => {
-        swal("Oh no!", "There was an error, try again later", "error");
+        swal('Oh no!', 'There was an error, try again later', 'error');
       });
   };
 
@@ -40,12 +42,14 @@ const Contact = () => {
         <div className="flex flex-wrap -mx-4 lg:justify-between">
           <div className="px-4 mx-auto w-30">
             <div className="max-w-[570px] mb-12 lg:mb-0">
-              <p className="mb-5 text-4xl uppercase text-center text-gray-600">
-                Contact me
-              </p>
-              <div className="hidden mx-auto mt-20 md:block">
+              <h1
+                className={`${hiThereStyle}` + ' z-2 flex justify-center mb-20'}
+              >
+                CONTAC ME
+              </h1>
+              <div className="hidden mt-20 md:flex md:justify-center">
                 <img
-                  className="w-60 h-60 animate-fadeInR"
+                  className=" h-60 animate-fadeInR"
                   src={emoji}
                   alt="img"
                 />
@@ -69,7 +73,7 @@ const Contact = () => {
                         py-3
                         px-[14px]
                         text-body-color text-base
-                        border border-black
+                        border border-gray-400
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
@@ -90,7 +94,7 @@ const Contact = () => {
                       bg-transparent
                         px-[14px]
                         text-body-color text-base
-                        border border-black
+                        border border-gray-400
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
@@ -111,7 +115,7 @@ const Contact = () => {
                         py-3
                         px-[14px]
                         text-body-color text-base
-                        border border-black
+                        border border-gray-400
                         resize-none
                         outline-none
                         focus-visible:shadow-none
