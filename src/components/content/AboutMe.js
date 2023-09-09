@@ -28,7 +28,7 @@ const AboutMe = ({ inside = false }) => {
           <h4
             className={` ${
               inside ? 'text-md w-80' : 'text-xl'
-            } text-center  text-gray-300 shadow-md`}
+            } text-center  text-gray-300 `}
           >
             <p>
               I am a passionate and creative developer with a strong foundation

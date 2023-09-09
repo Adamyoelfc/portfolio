@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="h-screen overflow-scroll w-screenh-screen scroll-auto backgroundImage">
+    <div className="h-screen overflow-scroll w-screenh-screen scroll-smooth backgroundImage" >
       <div className="h-screen mb-10">
         <Header />
       </div>

@@ -14,22 +14,27 @@ const Contact = () => {
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    send('service_tfmuyp8', 'template_npqqikg', toSend, '9zlDeEXVKu6TiMTca')
-      .then((response) => {
-        swal(
-          'Message sent successfully',
-          'I will reply as soon as possible',
-          'success'
-        );
-        setToSend({
-          from_name: '',
-          message: '',
-          reply_to: '',
+    if (!toSend.reply_to || !toSend.message || !toSend.name) {
+      swal('Check your inputs', 'Complete all your input fields', 'error');
+      return;
+    } else {
+      send('service_tfmuyp8', 'template_npqqikg', toSend, '9zlDeEXVKu6TiMTca')
+        .then((response) => {
+          setToSend({
+            from_name: '',
+            message: '',
+            reply_to: '',
+          });
+          swal(
+            'Message sent successfully',
+            'I will reply as soon as possible',
+            'success'
+          );
+        })
+        .catch((err) => {
+          swal('Oh no!', 'There was an error, try again later', 'error');
         });
-      })
-      .catch((err) => {
-        swal('Oh no!', 'There was an error, try again later', 'error');
-      });
+    }
   };
 
   const handleChange = (e) => {
@@ -48,11 +53,7 @@ const Contact = () => {
                 CONTAC ME
               </h1>
               <div className="hidden mt-20 md:flex md:justify-center">
-                <img
-                  className=" h-60 animate-fadeInR"
-                  src={emoji}
-                  alt="img"
-                />
+                <img className=" h-60 animate-fadeInR" src={emoji} alt="img" />
               </div>
             </div>
           </div>

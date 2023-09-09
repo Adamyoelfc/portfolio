@@ -20,6 +20,5 @@ body {
   height: screen;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: scroll; */
-  background-attachment: local;
+  background-attachment: fixed;
 }
