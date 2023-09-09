@@ -8,7 +8,7 @@ const AboutMe = ({ inside = false }) => {
   const aboutInView = useInView(aboutRef, { once: true });
   return (
     <motion.div
-      className="grid justify-items-center"
+      className={`grid justify-items-center ${inside ? 'pt-10' : 'pt-20'}`}
       style={{
         transform: aboutInView ? 'none' : 'translateX(+200px)',
         opacity: aboutInView ? 1 : 0,
@@ -17,16 +17,18 @@ const AboutMe = ({ inside = false }) => {
       ref={aboutRef}
     >
       <p
-        className={
-          `${hiThereStyle} + ' z-2 flex justify-center my-auto ' + ${inside ? 'm-5' : 'mb-20 mr-[55px]' }`
-        }
+        className={`${hiThereStyle} + ' z-2 flex justify-center my-auto ' + ${
+          inside ? 'm-5' : 'mb-2 '
+        }`}
       >
         ABOUT ME
       </p>
-      <div className={`${inside ? 'p-1' : 'p-10' }`}>
+      <div className={`${inside ? 'p-1' : 'p-20'}`}>
         <div>
           <h4
-           className={` ${inside ? 'text-md w-80' : 'text-3xl'}  max-w-screen-lg text-gray-300 shadow-md`}
+            className={` ${
+              inside ? 'text-md w-80' : 'text-3xl'
+            } text-center  text-gray-300 shadow-md`}
           >
             <p>
               I am a passionate and creative developer with a strong foundation

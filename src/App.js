@@ -9,9 +9,13 @@ import { useRef, useEffect } from 'react';
 import myGa from './myGa';
 import WSkills from './components/Skills/WSkills';
 
+import { useSelector } from 'react-redux';
+
 function App() {
-  const aboutMeRef = useRef()
+  const aboutMeRef = useRef();
   const projectRef = useRef();
+
+  const aboutInside = useSelector((state) => state.aboutInside.isInside);
 
   useEffect(() => {
     myGa();
@@ -23,17 +27,13 @@ function App() {
         <Header />
       </div>
 
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <WSkills />
       </div>
 
-      <div ref={projectRef} className="pt-20">
+      <div ref={projectRef} className="pt-20 overflow-hidden">
         <Projects />
       </div>
-
-      {/* <div className="pt-20">
-        <AboutMe />
-      </div> */}
 
       <div className="pt-20">
         <Contact />

@@ -5,12 +5,15 @@ import xelvatic from '../../assets/xelvatic.webp';
 import arrow from '../../assets/icons/right-arrow.png';
 import memorygame from '../../assets/MemoryGame.png';
 import shirtCustomizer from '../../assets/shirtCustomizer.png';
-import { Fragment, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { hiThereStyle } from '../../utils/Style';
-
 
 import { motion, useInView } from 'framer-motion';
 import AboutMe from '../content/AboutMe';
+
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setTrue, setFalse } from '../../store/aboutSlice';
 
 const projects = [
   {
@@ -66,10 +69,19 @@ const projects = [
 ];
 
 const Projects = () => {
+  const aboutInside = useSelector((state) => state.aboutInside.isInside);
+  const dispatch = useDispatch();
   const projectTextRef = useRef(null);
   const projectInView = useInView(projectTextRef, { once: true });
 
   let directionCard = true;
+
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.innerWidth < 768 ? dispatch(setTrue()) : dispatch(setFalse());
+    setWindowSize(window.innerWidth);
+  }, [windowSize]);
 
   return (
     <Fragment>
@@ -105,9 +117,7 @@ const Projects = () => {
               />
             );
           })}
-          {projects.length % 2 !== 0 && 
-            <AboutMe inside={true} />
-          }
+          <AboutMe inside={aboutInside ? false : true} />
         </div>
       </div>
     </Fragment>
