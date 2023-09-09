@@ -23,11 +23,11 @@ const AboutMe = ({ inside = false }) => {
       >
         ABOUT ME
       </p>
-      <div className={`${inside ? 'p-1' : 'p-20'}`}>
+      <div className={`${inside ? 'p-1' : 'p-10'}`}>
         <div>
           <h4
             className={` ${
-              inside ? 'text-md w-80' : 'text-3xl'
+              inside ? 'text-md w-80' : 'text-xl'
             } text-center  text-gray-300 shadow-md`}
           >
             <p>
