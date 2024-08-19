@@ -1,3 +1,4 @@
+//assets
 import js from '../../assets/icons/icons8-javascript.svg';
 import postgres from '../../assets/icons/icons8-postgresql.svg';
 import django from '../../assets/icons/icons8-django.svg';
@@ -6,6 +7,8 @@ import bootstrap from '../../assets/icons/icons8-bootstrap.svg';
 import react from '../../assets/icons/icons8-react-80.png';
 import vue from '../../assets/icons/icons8-vue.js-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-96.png';
 import github from '../../assets/icons/github.png';
+import planeta from '../../assets/planeta.png';
+
 import {
   delay,
   motion,
@@ -14,7 +17,6 @@ import {
 } from 'framer-motion';
 
 
-import planeta from '../../assets/planeta.png';
 
 import Skills from '../Skills/Skills';
 

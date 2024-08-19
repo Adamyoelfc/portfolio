@@ -12,12 +12,14 @@ import WSkills from './components/Skills/WSkills';
 import { useSelector } from 'react-redux';
 
 function App() {
+
   const aboutMeRef = useRef();
   const projectRef = useRef();
 
   const aboutInside = useSelector((state) => state.aboutInside.isInside);
 
   useEffect(() => {
+    // initialize google analytics
     myGa();
   }, []);
 
