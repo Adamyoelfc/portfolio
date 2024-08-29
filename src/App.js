@@ -8,7 +8,6 @@ import Projects from './components/Projects/Projects';
 import { useRef, useEffect } from 'react';
 import myGa from './myGa';
 import WSkills from './components/Skills/WSkills';
-import Canvas from './components/Skills/canvas';
 
 import { useSelector } from 'react-redux';
 
