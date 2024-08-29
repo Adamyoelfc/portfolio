@@ -14,7 +14,7 @@ const Contact = () => {
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    if (!toSend.reply_to || !toSend.message || !toSend.name) {
+    if (!toSend.reply_to || !toSend.message || !toSend.from_name) {
       swal('Check your inputs', 'Complete all your input fields', 'error');
       return;
     } else {

@@ -12,11 +12,11 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  color: gray;
+  background: #111039;
 }
 
 .backgroundImage {
-  background-image: url(./assets/background.png);
+  background-image: url(./assets/backgroundBlack.png);
   height: screen;
   background-repeat: no-repeat;
   background-size: cover;
