@@ -73,6 +73,7 @@ const Contact = () => {
                         rounded
                         py-3
                         px-[14px]
+                    text-white
                         text-body-color text-base
                         border border-gray-400
                         outline-none
@@ -91,6 +92,7 @@ const Contact = () => {
                     className="
                         w-full
                         rounded
+                    text-white
                         py-3
                       bg-transparent
                         px-[14px]
@@ -115,6 +117,7 @@ const Contact = () => {
                       bg-transparent
                         py-3
                         px-[14px]
+                    text-white
                         text-body-color text-base
                         border border-gray-400
                         resize-none

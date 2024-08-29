@@ -76,7 +76,7 @@ export default function Footer(props) {
           </p>
           <div className="hidden mr-20 sm:flex">
             <a
-              className="m-2 hover:text-blue-500"
+              className="m-2 hover:text-blue-500 text-gray-400"
               href="https://github.com/Adamyoelfc"
               target="_blank"
               rel="noreferrer"
@@ -84,7 +84,7 @@ export default function Footer(props) {
               GHITHUB
             </a>
             <a
-              className="m-2 hover:text-blue-500"
+              className="m-2 hover:text-blue-500 text-gray-400"
               href="https://www.linkedin.com/in/adam-fernandez-330a011a8"
               target="_blank"
               rel="noreferrer"
