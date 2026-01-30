@@ -2,23 +2,175 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* quitando el scroll bar */
-::-webkit-scrollbar {
-  width: 0px;
-  background-color: transparent;
+/* CSS Custom Properties */
+:root {
+  --color-bg-primary: #0D0F0A;
+  --color-bg-secondary: #151812;
+  --color-accent: #39FF14;
+  --color-text-primary: #E8F0E0;
+  --color-text-secondary: #A3B090;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #111039;
+/* Base Styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-secondary font-body;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(57, 255, 20, 0.3);
+    color: var(--color-text-primary);
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-primary;
+  }
 }
 
-.backgroundImage {
-  background-image: url(./assets/backgroundBlack.png);
-  height: screen;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+/* Scrollbar */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A2F22;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+}
+
+/* Component Classes */
+@layer components {
+  /* Container */
+  .container-main {
+    @apply w-full max-w-content mx-auto px-container;
+  }
+
+  /* Section */
+  .section {
+    @apply py-section;
+  }
+
+  /* Grain Overlay */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    animation: grain 0.5s steps(10) infinite;
+  }
+
+  /* Scanlines */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    z-index: 1;
+  }
+
+  /* Vignette */
+  .vignette::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 50%,
+      rgba(13, 15, 10, 0.4) 100%
+    );
+    z-index: 999;
+  }
+
+  /* Glow text */
+  .glow-text {
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-bg-card border border-border rounded-card p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-accent-primary/30 shadow-glow;
+  }
+
+  /* Link styles */
+  .link-underline {
+    @apply relative inline-block text-accent-primary;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-accent-primary transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Terminal prompt */
+  .terminal-prompt::before {
+    content: '>';
+    @apply text-accent-primary mr-2 font-mono;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-gold via-accent-secondary to-accent-primary bg-clip-text text-transparent;
+  }
+
+  /* Fade animations with delays */
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

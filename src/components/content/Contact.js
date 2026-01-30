@@ -3,7 +3,7 @@ import { useState } from 'react';
 import swal from 'sweetalert';
 import emoji from '../../assets/icons/call-me-icon.png';
 
-import { hiThereStyle } from '../../utils/Style';
+import { sectionHeaderStyle } from '../../utils/Style';
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -48,91 +48,76 @@ const Contact = () => {
           <div className="px-4 mx-auto w-30">
             <div className="max-w-[570px] mb-12 lg:mb-0">
               <h1
-                className={`${hiThereStyle}` + ' z-2 flex justify-center mb-20'}
+                className={`${sectionHeaderStyle} z-2 flex justify-center mb-20`}
               >
-                CONTAC ME
+                CONTACT ME
               </h1>
               <div className="hidden mt-20 md:flex md:justify-center">
-                <img className=" h-60 animate-fadeInR" src={emoji} alt="img" />
+                <img
+                  className="h-60 animate-fadeInR filter-crt"
+                  src={emoji}
+                  alt="Contact"
+                />
               </div>
             </div>
           </div>
           <div className="w-full max-w-lg px-4 mx-auto">
-            <div className="relative p-8 rounded-lg sm:p-12">
+            <div className="relative p-8 rounded-lg bg-crt-bg-secondary/50 border border-crt-border sm:p-12">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 mb-6 pb-4 border-b border-crt-border">
+                <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                <div className="w-3 h-3 rounded-full bg-crt-accent/70"></div>
+                <span className="ml-4 font-mono text-crt-text-muted text-xs">contact.sh</span>
+              </div>
+
               <form onSubmit={submitFormHandler}>
                 <div className="mb-6">
+                  <label className="block font-mono text-crt-text-muted text-xs mb-2">
+                    <span className="text-crt-accent">&gt;</span> your_name
+                  </label>
                   <input
                     name="from_name"
                     value={toSend.from_name}
                     onChange={handleChange}
                     type="text"
-                    placeholder="Your Name"
-                    className="
-                        w-full
-                      bg-transparent
-                        rounded
-                        py-3
-                        px-[14px]
-                    text-white
-                        text-body-color text-base
-                        border border-gray-400
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
+                    placeholder="Enter your name"
+                    className="input-crt w-full rounded py-3 px-4 font-ui"
                   />
                 </div>
                 <div className="mb-6">
+                  <label className="block font-mono text-crt-text-muted text-xs mb-2">
+                    <span className="text-crt-accent">&gt;</span> your_email
+                  </label>
                   <input
                     name="reply_to"
                     value={toSend.reply_to}
                     onChange={handleChange}
                     type="email"
-                    placeholder="Your Email"
-                    className="
-                        w-full
-                        rounded
-                    text-white
-                        py-3
-                      bg-transparent
-                        px-[14px]
-                        text-body-color text-base
-                        border border-gray-400
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
+                    placeholder="Enter your email"
+                    className="input-crt w-full rounded py-3 px-4 font-ui"
                   />
                 </div>
                 <div className="mb-6">
+                  <label className="block font-mono text-crt-text-muted text-xs mb-2">
+                    <span className="text-crt-accent">&gt;</span> message
+                  </label>
                   <textarea
                     rows="6"
                     name="message"
                     value={toSend.message}
                     onChange={handleChange}
-                    placeholder="Your Message"
-                    className="
-                        w-full
-                        rounded
-                      bg-transparent
-                        py-3
-                        px-[14px]
-                    text-white
-                        text-body-color text-base
-                        border border-gray-400
-                        resize-none
-                        outline-none
-                        focus-visible:shadow-none
-                        focus:border-primary
-                        "
+                    placeholder="Type your message here..."
+                    className="input-crt w-full rounded py-3 px-4 resize-none font-ui"
                   ></textarea>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="w-full p-3 text-white border rounded bg-black border-primary transition hover:bg-opacity-50"
+                    className="btn-terminal w-full p-3 rounded flex items-center justify-center"
                   >
-                    Send Message
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">$ </span>
+                    send_message
                   </button>
                 </div>
               </form>
