@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Adan "Adam" Fernandez - Software Engineering Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio focused on professional experience building and operating e-commerce platforms, backend services, and enterprise integrations.
 
-## Available Scripts
+## What the site covers
 
-In the project directory, you can run:
+- Professional experience across a multi-brand commerce organization.
+- Sanitized case studies for commerce architecture, order integrations, and production reliability.
+- Technical skills grouped by frontend, backend, data, integrations, and operations.
+- A focused selection of personal products: VitalCoach, GiftSwap Mobile, and Shirt Customizer.
+- An ATS-friendly downloadable resume.
 
-### `npm start`
+## Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18 and Create React App
+- Tailwind CSS
+- GSAP for non-scroll hero and skills interactions
+- EmailJS for the contact form
+- React GA for analytics
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Local development
 
-### `npm test`
+```bash
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app runs at `http://localhost:3000`.
 
-### `npm run build`
+## Production build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The optimized static site is generated in `build/` and is configured for `https://adamdev.me/`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Performance and accessibility decisions
 
-### `npm run eject`
+- Native browser scrolling is preserved without scroll interception, scroll snapping, or ScrollTrigger.
+- Horizontal overflow uses `clip` so the page does not create a competing nested scroll container.
+- Motion is minimized when `prefers-reduced-motion` is enabled.
+- Semantic sections, descriptive alternative text, visible focus styles, and labeled controls are used throughout.
+- Metadata includes canonical, Open Graph, and Person structured data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Content privacy
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Professional case studies describe responsibilities and system boundaries without exposing proprietary code, credentials, customer data, or confidential architecture.

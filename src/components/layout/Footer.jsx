@@ -1,9 +1,5 @@
-import { useEffect, useRef } from 'react';
 import { Container } from './Container';
 import { socialLinks, cvUrl, contactInfo } from '../../data';
-import { gsap, ScrollTrigger } from '../../hooks';
-
-gsap.registerPlugin(ScrollTrigger);
 
 function SocialIcon({ type }) {
   const icons = {
@@ -34,32 +30,9 @@ function SocialIcon({ type }) {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const footerRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.footer-content',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <footer ref={footerRef} className="border-t border-border bg-bg-secondary/50 px-4 sm:px-6">
+    <footer className="border-t border-border bg-bg-secondary/50 px-4 sm:px-6">
       <Container>
         <div className="footer-content py-10 sm:py-12">
           {/* Top section */}
@@ -70,7 +43,7 @@ export function Footer() {
                 Adam<span className="text-accent-primary">.</span>dev
               </h3>
               <p className="text-text-muted text-sm sm:text-base max-w-xs leading-relaxed">
-                Full-stack developer passionate about building innovative web solutions.
+                Software engineer focused on e-commerce platforms, backend systems, and enterprise integrations.
               </p>
             </div>
 
@@ -109,10 +82,10 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="#projects"
+                    href="#experience"
                     className="text-text-secondary hover:text-accent-primary transition-colors text-sm sm:text-base"
                   >
-                    Projects
+                    Experience
                   </a>
                 </li>
                 <li>

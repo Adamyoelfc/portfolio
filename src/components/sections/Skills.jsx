@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Section, SectionHeader } from '../layout';
 import { skills, skillCategories } from '../../data';
-import { gsap, ScrollTrigger } from '../../hooks';
-
-gsap.registerPlugin(ScrollTrigger);
+import gsap from 'gsap';
 
 // SVG Icons for skills
 const SkillIcons = {
@@ -327,7 +325,6 @@ function CategoryTab({ category, label, color, isActive, onClick }) {
 
 export function Skills() {
   const sectionRef = useRef(null);
-  const gridRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('all');
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -368,64 +365,6 @@ export function Skills() {
       },
     });
   };
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Initial reveal animation for skills grid
-      gsap.fromTo(
-        '.skill-card',
-        { opacity: 0, y: 60, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.06,
-          ease: 'back.out(1.4)',
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Animate category tabs
-      gsap.fromTo(
-        '.category-tab',
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.08,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.category-tabs',
-            start: 'top 90%',
-          },
-        }
-      );
-
-      // Marquee reveal
-      gsap.fromTo(
-        '.skills-marquee',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.skills-marquee',
-            start: 'top 90%',
-          },
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <Section ref={sectionRef} id="skills" className="overflow-hidden">
@@ -475,7 +414,6 @@ export function Skills() {
 
       {/* Skills Grid */}
       <div
-        ref={gridRef}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto"
       >
         {filteredSkills.map((skill, index) => (
@@ -486,12 +424,12 @@ export function Skills() {
       {/* Bottom decorative text */}
       <div className="mt-16 text-center">
         <p className="text-text-muted text-sm max-w-xl mx-auto font-body leading-relaxed">
-          Always learning and exploring new technologies.
+          Production-minded engineering across commerce, integrations, and operations.
           <br />
           <span className="inline-flex items-center gap-2 mt-2">
             <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
             <span className="text-accent-primary font-mono">
-              Currently diving into AI/ML and Web3
+              Currently focused on reliable, maintainable systems
             </span>
           </span>
         </p>

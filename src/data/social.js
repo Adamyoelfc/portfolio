@@ -1,4 +1,4 @@
-import cv from '../assets/Adam_en_CV.pdf';
+import cv from '../assets/Adan-Fernandez-Software-Engineer-Resume.pdf';
 
 export const socialLinks = [
   {

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">GiftSwap project illustration</title>
+  <desc id="description">Connected gift boxes representing a coordinated gift exchange</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151812"/>
+      <stop offset="1" stop-color="#0d0f0a"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g stroke="#39ff14" stroke-opacity=".23" stroke-width="3" fill="none">
+    <path d="M286 230 600 360 914 230M286 490 600 360 914 490"/>
+    <circle cx="600" cy="360" r="205" stroke-dasharray="8 18"/>
+  </g>
+  <circle cx="600" cy="360" r="150" fill="#39ff14" opacity=".08" filter="url(#glow)"/>
+  <g transform="translate(484 244)">
+    <rect x="18" y="94" width="196" height="150" rx="18" fill="#20251b" stroke="#39ff14" stroke-width="5"/>
+    <rect x="0" y="54" width="232" height="62" rx="16" fill="#2a3023" stroke="#39ff14" stroke-width="5"/>
+    <path d="M116 56v188M79 54c-43-12-45-62-9-68 35-6 46 44 46 68M153 54c43-12 45-62 9-68-35-6-46 44-46 68" fill="none" stroke="#39ff14" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g fill="#151812" stroke="#7fff00" stroke-width="4">
+    <rect x="222" y="175" width="128" height="104" rx="14"/><path d="M286 175v104M210 196h152"/>
+    <rect x="850" y="175" width="128" height="104" rx="14"/><path d="M914 175v104M838 196h152"/>
+    <rect x="222" y="441" width="128" height="104" rx="14"/><path d="M286 441v104M210 462h152"/>
+    <rect x="850" y="441" width="128" height="104" rx="14"/><path d="M914 441v104M838 462h152"/>
+  </g>
+  <text x="600" y="652" text-anchor="middle" fill="#a3b090" font-family="monospace" font-size="28" letter-spacing="8">GIFTSWAP</text>
+</svg>

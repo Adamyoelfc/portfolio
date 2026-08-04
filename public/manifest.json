@@ -1,6 +1,6 @@
 {
-  "short_name": "AdamDev",
-  "name": "AdamDev Portfolio",
+  "short_name": "Adam.dev",
+  "name": "Adan Fernandez - Software Engineer Portfolio",
   "icons": [
     {
       "src": "favico.ico",
@@ -15,6 +15,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0D0F0A",
+  "background_color": "#0D0F0A"
 }

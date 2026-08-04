@@ -55,6 +55,24 @@ export const skills = [
     icon: 'nextjs',
     description: 'React framework for production',
   },
+  {
+    id: 26,
+    name: 'React Native',
+    category: 'frontend',
+    color: '#61DAFB',
+    abbrev: 'RN',
+    icon: 'react',
+    description: 'Cross-platform native applications',
+  },
+  {
+    id: 27,
+    name: 'Expo',
+    category: 'frontend',
+    color: '#FFFFFF',
+    abbrev: 'Ex',
+    icon: 'expo',
+    description: 'Native app platform and tooling',
+  },
 
   // Backend
   {

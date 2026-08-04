@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Container } from '../layout';
 import { Button } from '../ui';
-import { socialLinks } from '../../data';
-import { gsap } from '../../hooks';
+import { socialLinks, cvUrl } from '../../data';
+import gsap from 'gsap';
 import MyPhoto from '../../assets/MyPhoto.png';
+
+const roles = ['E-commerce Platforms', 'Backend Systems', 'Enterprise Integrations'];
 
 function TypewriterText({ texts, className = '' }) {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -71,7 +73,6 @@ function SocialIcon({ type }) {
 }
 
 export function Hero() {
-  const roles = ['Full Stack Developer', 'React Specialist', 'Problem Solver'];
   const heroRef = useRef(null);
   const contentRef = useRef(null);
   const photoRef = useRef(null);
@@ -161,18 +162,16 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div ref={contentRef} className="order-2 lg:order-1 text-center lg:text-left">
-            {/* Badge - Currently unavailable */}
-            {/* <div className="hero-badge mb-4 sm:mb-6">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-bg-tertiary border border-border-hover text-text-secondary   font-mono text-xs sm:text-sm cursor-not-allowed">
-                <span className="w-2 h-2 rounded-full bg-text-secondary" />
-                Available for work
+            <div className="hero-badge mb-4 sm:mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-bg-tertiary border border-border text-text-secondary font-mono text-xs sm:text-sm">
+                <span className="w-2 h-2 rounded-full bg-accent-primary" />
+                Tampa, FL · Open to remote U.S. roles
               </span>
-            </div> */}
+            </div>
 
             {/* Title */}
             <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary mb-3 sm:mb-4 leading-tight">
-              Hi, I'm{' '}
-              <span className="text-gradient">Adam</span>
+              Software Engineer<span className="text-accent-primary">.</span>
             </h1>
 
             {/* Typewriter */}
@@ -185,18 +184,18 @@ export function Hero() {
 
             {/* Description */}
             <p className="hero-description text-base sm:text-lg text-text-secondary max-w-lg mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed">
-              Passionate about creating innovative web solutions with clean code
-              and intuitive user experiences. Specialized in React, Vue.js, Django, and
-              enterprise integrations.
+              I build and operate e-commerce platforms, backend services, and enterprise
+              integrations connecting storefronts with ERP, marketplaces, EDI networks,
+              shipping, tax, and fulfillment systems.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10">
-              <Button href="#contact" variant="primary" size="lg" className="hero-cta w-full sm:w-auto">
-                Get in Touch
+              <Button href="#experience" variant="primary" size="lg" className="hero-cta w-full sm:w-auto">
+                View Experience
               </Button>
-              <Button href="#projects" variant="secondary" size="lg" className="hero-cta w-full sm:w-auto">
-                View Projects
+              <Button href={cvUrl} external variant="secondary" size="lg" className="hero-cta w-full sm:w-auto">
+                Download Resume
               </Button>
             </div>
 
@@ -227,7 +226,7 @@ export function Hero() {
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border-2 border-accent-primary/30">
                 <img
                   src={MyPhoto}
-                  alt="Adam Fernandez"
+                  alt="Adan 'Adam' Fernandez"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 scanlines pointer-events-none opacity-30" />

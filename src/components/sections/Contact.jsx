@@ -1,11 +1,8 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback } from 'react';
 import { send } from 'emailjs-com';
 import { Section, SectionHeader } from '../layout';
 import { Input, Textarea, Button } from '../ui';
 import { contactInfo } from '../../data';
-import { gsap, ScrollTrigger } from '../../hooks';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const initialFormState = {
   from_name: '',
@@ -55,66 +52,6 @@ export function Contact() {
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState(initialErrors);
   const [status, setStatus] = useState('idle');
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate contact info
-      gsap.fromTo(
-        '.contact-info',
-        { opacity: 0, x: -40 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.contact-info',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Animate form
-      gsap.fromTo(
-        '.contact-form',
-        { opacity: 0, x: 40 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.contact-form',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Animate form fields
-      gsap.fromTo(
-        '.form-field',
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.contact-form',
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -151,7 +88,7 @@ export function Contact() {
   };
 
   return (
-    <Section ref={sectionRef} id="contact" className="bg-bg-secondary/30 px-4 sm:px-6">
+    <Section id="contact" className="bg-bg-secondary/30 px-4 sm:px-6">
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
         {/* Left: Info */}
         <div className="contact-info">
